@@ -1,0 +1,21 @@
+{
+  "name": "add-to-calendar-button",
+  "version": "1.0.0",
+  "description": "Add to calendar button",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel ./src/index.ts --out-dir dist",
+    "build": "parcel build ./src/index.ts --out-dir dist"
+  },
+  "author": "Jonathan Siebern <jsiebern88@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jss": "^9.3.0",
+    "parcel-bundler": "/Users/jonathansiebern/git/_fork/parcel",
+    "typescript": "^2.7.2"
+  },
+  "dependencies": {
+    "jss": "^9.8.0",
+    "jss-preset-default": "^4.3.0"
+  }
+}
