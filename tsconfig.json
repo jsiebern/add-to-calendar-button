@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-        "outFile": "dist/add-to-calendar.js",
         "sourceMap": true,
         "module": "esnext",
         "target": "es5",
@@ -13,7 +12,6 @@
         ],
         "jsx": "react",
         "moduleResolution": "node",
-        "allowJs": true,
         "forceConsistentCasingInFileNames": true,
         "noImplicitReturns": true,
         "noImplicitThis": true,
