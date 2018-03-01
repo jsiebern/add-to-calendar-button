@@ -21,7 +21,12 @@ class Yahoo implements Base {
 
         const yahooEventDuration = yahooHourDuration + yahooMinuteDuration;
 
-        return `<a href="${encodeURI(`http://calendar.yahoo.com/?v=60&view=d&type=20&title=${config.title}&st=${formatDate(new Date(config.start * 1000))}&dur=${yahooEventDuration}&desc=${config.description}&in_loc=${config.location}`)}" target="_blank">${this.label}</a>`;
+        config = { ...config };
+        Object.keys(config).forEach(key => {
+            config[key] = encodeURIComponent(config[key]);
+        });
+
+        return `<a href="http://calendar.yahoo.com/?v=60&view=d&type=20&title=${config.title}&st=${formatDate(new Date(config.start * 1000))}&dur=${yahooEventDuration}&desc=${config.description}&in_loc=${config.location}" target="_blank">${this.label}</a>`;
     }
 }
 

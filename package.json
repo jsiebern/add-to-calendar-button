@@ -4,8 +4,8 @@
   "description": "Add to calendar button",
   "main": "dist/add-to-calendar-button.js",
   "scripts": {
-    "start": "microbundle watch --entry src/index.ts",
-    "build": "microbundle --entry src/index.ts --sourcemap false"
+    "start": "parcel src/index.ts",
+    "build": "parcel build src/index.ts"
   },
   "author": "Jonathan Siebern <jsiebern88@gmail.com>",
   "license": "MIT",
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "jss": "^9.8.0",
-    "jss-preset-default": "^4.3.0"
+    "jss-preset-default": "^4.3.0",
+    "parcel-bundler": "^1.6.2"
   }
 }

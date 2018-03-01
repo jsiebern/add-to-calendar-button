@@ -10,7 +10,11 @@ class Google implements Base {
     online = true
 
     getLink(config: AtcConfig) {
-        return `<a href="${encodeURI(`https://www.google.com/calendar/render?action=TEMPLATE&text=${config.title}&dates=${formatDate(new Date(config.start * 1000))}/${formatDate(new Date(config.end * 1000))}&details=${config.description}&location=${config.location}&sprop=&sprop=name:`)}" target="_blank">${this.label}</a>`;
+        config = { ...config };
+        Object.keys(config).forEach(key => {
+            config[key] = encodeURIComponent(config[key]);
+        });
+        return `<a href="https://www.google.com/calendar/render?action=TEMPLATE&text=${config.title}&dates=${formatDate(new Date(config.start * 1000))}/${formatDate(new Date(config.end * 1000))}&details=${config.description}&location=${config.location}" target="_blank">${this.label}</a>`;
     }
 }
 

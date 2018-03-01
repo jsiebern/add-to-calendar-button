@@ -12,7 +12,11 @@ class OutlookOnline implements Base {
     online = true
 
     getLink(config: AtcConfig) {
-        return `<a href="${encodeURI(`https://outlook.live.com/owa/?path=/calendar/action/compose&startdt=${formatDate(new Date(config.start * 1000))}&enddt=${formatDate(new Date(config.end * 1000))}&subject=${config.title}&body=${config.description}&location=${config.location}`)}&allday=" target="_blank">${this.label}</a>`;
+        config = { ...config };
+        Object.keys(config).forEach(key => {
+            config[key] = encodeURIComponent(config[key]);
+        });
+        return `<a href="https://outlook.live.com/owa/?path=/calendar/action/compose&startdt=${formatDate(new Date(config.start * 1000))}&enddt=${formatDate(new Date(config.end * 1000))}&subject=${config.title}&body=${config.description}&location=${config.location}&allday=" target="_blank">${this.label}</a>`;
     }
 }
 
