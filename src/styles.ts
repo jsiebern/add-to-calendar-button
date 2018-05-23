@@ -1,4 +1,4 @@
-import jss from 'jss';
+    import jss from 'jss';
 // @ts-ignore
 import preset from 'jss-preset-default';
 
@@ -53,10 +53,13 @@ const styles = {
         textDecoration: 'none',
         fontSize: 14,
         color: '#333',
-        padding: '9px 10px 9px 40px',
+        padding: '9px 10px 9px 40px!important',
         position: 'relative',
         cursor: 'pointer',
         whiteSpace: 'nowrap',
+        '&:before': {
+            content: 'unset',
+        },
         '& svg': {
             position: 'absolute',
             maxHeight: 18,
